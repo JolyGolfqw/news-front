@@ -3,11 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { loadNews } from "../redux/features/news";
 import { Form, Button } from "react-bootstrap";
-import {
-  addComment,
-  deleteComment,
-  loadComments,
-} from "../redux/features/comments";
+import {addComment, deleteComment, loadComments,} from "../redux/features/comments";
 import CircularProgress from "@mui/material/CircularProgress";
 
 export default function FullNews() {
@@ -18,27 +14,26 @@ export default function FullNews() {
   const loader = useSelector((state) => state.news.loading);
   const commentLoader = useSelector((state) => state.comments.loading);
   const error = useSelector((state) => state.comments.error);
-
-  const handleAddComment = (e) => {
-    setCommentText(e.target.value);
-  };
-
-  const { id } = useParams();
-  const userName = localStorage.getItem("name");
-
   const news = useSelector((state) => state.news.news);
   const comments = useSelector((state) => state.comments.comments);
   const user = useSelector((state) => state.application.user);
   const token = useSelector((state) => state.application.token);
+
+  const { id } = useParams();
+  const userName = localStorage.getItem("name");
 
   useEffect(() => {
     dispatch(loadNews());
     dispatch(loadComments());
   }, [dispatch]);
 
-  const commentsLength = [];
 
+  const commentsLength = [];
   const reversed = [...comments].reverse();
+
+  const handleAddComment = (e) => {
+    setCommentText(e.target.value);
+  };
 
   const addCom = () => {
     if (!commentText) {

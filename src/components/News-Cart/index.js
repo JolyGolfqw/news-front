@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export default function Cart({ img, title, text, index, id }) {
+
+  Cart.propTypes = {
+    img: PropTypes.string,
+    title: PropTypes.string,
+    text: PropTypes.string,
+  };
+
   return (
     <div className="news">
       {index % 2 === 0 ? (

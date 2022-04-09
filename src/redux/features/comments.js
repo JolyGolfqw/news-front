@@ -4,7 +4,7 @@ const initialState = {
   loading: true,
 };
 
-export default function (state = initialState, action) {
+export default function comments(state = initialState, action) {
   switch (action.type) {
     case "comments/load/fulfilled":
       return { ...state, comments: action.payload, loading: false };
