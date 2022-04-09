@@ -52,7 +52,6 @@ export const loadComments = () => {
     try {
       const comments = await fetch(`http://localhost:4000/comments`);
       const json = await comments.json();
-      console.log(json);
 
       if (json.error) {
         dispatch({

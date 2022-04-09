@@ -105,7 +105,6 @@ export default function FullNews() {
 
                 if (comment.news === id) {
                   const name = comment.user.login;
-                  console.log(name);
                   return (
                     <div key={index * 100} className="comment">
                       <div className="comment_head">
