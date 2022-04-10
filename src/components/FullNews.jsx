@@ -43,7 +43,7 @@ export default function FullNews() {
     if (!token) {
       return alert("Авторизуйтесь чтобы оставлять комментарии!");
     }
-    dispatch(addComment(commentText, id, user));
+    dispatch(addComment(commentText, id, user, userName));
     setCommentText("");
   };
 
@@ -104,17 +104,16 @@ export default function FullNews() {
                 const date = `${year} ${time}`;
 
                 if (comment.news === id) {
-                  const name = comment.user.login;
                   return (
                     <div key={index * 100} className="comment">
                       <div className="comment_head">
                         <div className="author">
-                          <div>{name}</div>
+                          <div>{comment.author}</div>
                           <span>{date}</span>
                         </div>
                         <button
                           onClick={() =>
-                            deleteCommentaries(comment._id, comment.user._id)
+                            deleteCommentaries(comment._id, comment.user)
                           }
                         >
                           x

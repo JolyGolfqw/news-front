@@ -10,6 +10,8 @@ export default function Signin() {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
 
+  const userName = localStorage.getItem("name");
+
   const error = useSelector((state) => state.application.errorSingnIn);
   const signingIn = useSelector((state) => state.application.signingIn);
   const token = useSelector((state) => state.application.token);
@@ -48,7 +50,7 @@ export default function Signin() {
             <h1 className="h3 mb-3 fw-normal error">{error}</h1>
           ) : (
             <h1 className="h3 mb-3 fw-normal">
-              {token ? `Добро пожаловать, ${login}` : "Авторизуйтесь"}
+              {token ? `Добро пожаловать, ${userName}` : "Авторизуйтесь"}
             </h1>
           )}
 

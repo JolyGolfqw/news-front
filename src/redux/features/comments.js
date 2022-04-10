@@ -70,7 +70,7 @@ export const loadComments = () => {
   };
 };
 
-export const addComment = (text, news, user) => {
+export const addComment = (text, news, user, author) => {
   return async (dispatch, getState) => {
     dispatch({ type: "comments/add/pending" });
     try {
@@ -81,7 +81,7 @@ export const addComment = (text, news, user) => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${state.application.token}`,
         },
-        body: JSON.stringify({ text, news, user }),
+        body: JSON.stringify({ text, news, user, author }),
       });
 
       const json = await comment.json();

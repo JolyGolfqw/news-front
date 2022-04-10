@@ -22,6 +22,13 @@ code {
   max-width: 95% !important;
 }
 
+.headerName {
+  margin-right: 20px;
+  font-size: 22px;
+  font-weight: 500;
+  
+}
+
 /* CATEGORIES */
 
 .categories {

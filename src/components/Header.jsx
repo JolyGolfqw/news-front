@@ -6,9 +6,15 @@ import { useSelector } from "react-redux";
 export default function Header() {
   const token = useSelector((state) => state.application.token);
 
+  const userName = localStorage.getItem("name");
+
   const handleUnSign = () => {
-    return localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("name");
+    localStorage.removeItem("token");
+    return;
   };
+
   return (
     <div className="container">
       <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -53,27 +59,32 @@ export default function Header() {
 
         <div className="col-md-3 text-end">
           {token ? (
-            <a href="/">
-              <button
-                onClick={handleUnSign}
-                type="button"
-                className="btn btn-outline-primary me-2"
-              >
-                Выйти
-              </button>
-            </a>
+            <>
+              <span className="headerName">{userName}</span>
+              <a href="/">
+                <button
+                  onClick={handleUnSign}
+                  type="button"
+                  className="btn btn-outline-primary me-2"
+                >
+                  Выйти
+                </button>
+              </a>
+            </>
           ) : (
-            <Link to="/signin">
-              <button type="button" className="btn btn-outline-primary me-2">
-                Вход
-              </button>
-            </Link>
+            <>
+              <Link to="/signin">
+                <button type="button" className="btn btn-outline-primary me-2">
+                  Вход
+                </button>
+              </Link>
+              <Link to="/signup">
+                <button type="button" className="btn btn-primary">
+                  Регистрация
+                </button>
+              </Link>
+            </>
           )}
-          <Link to="/signup">
-            <button type="button" className="btn btn-primary">
-              Регистрация
-            </button>
-          </Link>
         </div>
       </header>
     </div>
