@@ -9,6 +9,8 @@ export default function News() {
   const dispatch = useDispatch();
   const news = useSelector((state) => state.news.news);
 
+  // console.log(news)
+
   const loader = useSelector((state) => state.news.loading);
   const error = useSelector((state) => state.news.error);
 

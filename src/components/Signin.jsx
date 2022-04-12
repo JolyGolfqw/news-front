@@ -63,7 +63,7 @@ export default function Signin() {
               id="floatingInput"
               placeholder="name@example.com"
             />
-            <label for="floatingInput">Имя пользователя</label>
+            <label htmlFor="floatingInput">Имя пользователя</label>
           </div>
           <div className="form-floating">
             <input
@@ -74,12 +74,12 @@ export default function Signin() {
               id="floatingPassword"
               placeholder="Password"
             />
-            <label for="floatingPassword">Пароль</label>
+            <label htmlFor="floatingPassword">Пароль</label>
           </div>
 
           <div className="checkbox mb-3"></div>
           <button
-            disable={signingIn}
+            disabled={signingIn}
             onClick={(e) => handleAuth(e)}
             className="w-100 btn btn-lg btn-primary"
             type="submit"

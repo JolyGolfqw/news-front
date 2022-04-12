@@ -65,7 +65,7 @@ export default function Signup() {
               id="floatingInput"
               placeholder="name@example.com"
             />
-            <label for="floatingInput">Имя пользователя</label>
+            <label htmlFor="floatingInput">Имя пользователя</label>
           </div>
           <div className="form-floating">
             <input
@@ -76,7 +76,7 @@ export default function Signup() {
               id="floatingPassword"
               placeholder="Password"
             />
-            <label for="floatingPassword">Пароль</label>
+            <label htmlFor="floatingPassword">Пароль</label>
           </div>
 
           <div className="checkbox mb-3"></div>

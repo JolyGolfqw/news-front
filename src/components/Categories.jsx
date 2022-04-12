@@ -12,6 +12,7 @@ export default function Categories() {
     dispatch(loadCategories());
   }, [dispatch]);
 
+  // console.log(categories)
   return (
     <div className={"categories"}>
       {categories.map((item, index) => {

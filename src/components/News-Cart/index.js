@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export default function Cart({ img, title, text, index, id }) {
-
+export default React.memo(function Cart({ img, title, text, index, id }) {
   Cart.propTypes = {
     img: PropTypes.string,
     title: PropTypes.string,
@@ -37,4 +36,4 @@ export default function Cart({ img, title, text, index, id }) {
       )}
     </div>
   );
-}
+});

@@ -19,6 +19,10 @@ export default function FullNews() {
   const user = useSelector((state) => state.application.user);
   const token = useSelector((state) => state.application.token);
 
+  console.log(news)
+  console.log(comments)
+
+
   const { id } = useParams();
   const userName = localStorage.getItem("name");
 
